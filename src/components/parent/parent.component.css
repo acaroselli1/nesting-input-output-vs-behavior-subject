@@ -1,0 +1,21 @@
+.container{
+    background-color:#B7695C;
+    padding:20px;
+  }
+  
+  .gotMessage{
+    background-color:#06425C;
+    color:white;
+    border:2px solid white;
+  }
+  
+  
+  .gotMessageDown{
+    background-color:#425c06;
+    color:white;
+    border:2px solid white;
+  }
+
+   input{
+  font-weight:bold;
+ }

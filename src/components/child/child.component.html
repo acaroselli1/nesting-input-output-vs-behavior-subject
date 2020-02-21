@@ -1,0 +1,21 @@
+<div class="container card" [ngClass]="{'gotMessage':upstream,'gotMessageDown':messageFromParent && !upstream}">
+	<div class="card-body">
+		<div class="card-title">
+			<h5 class="font-weight-bold">CHILD</h5>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input-group-text"><span class="font-weight-bold">@Output&nbsp;</span><i class="fa fa-arrow-up fa-lg up" [ngClass]="{'highlighted':upstream}"></i></span>
+				</div>
+				<input type="text" class="form-control" [(ngModel)]="message">
+        <div class="input-group-prepend">
+					<span class="input-group-text"><span class="font-weight-bold">@Input&nbsp;</span><i class="fa fa-arrow-down fa-lg down" [ngClass]="{'highlighted':!upstream && isSendMessageDownButtonClicked}"></i></span>
+				</div>
+				<input type="text" class="form-control" [(ngModel)]="messageFromParent">
+      </div>
+      <app-count [parentComponentName]="componentName"></app-count>
+				<app-grandchild [isSendMessageDownButtonClicked]="isSendMessageDownButtonClicked"
+					[messageFromParent]="messageFromParent" (passDataToChild)="handleData($event)">
+				</app-grandchild>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,11 @@
+<div class="input-group mb-3">
+  <div class="input-group-prepend" [ngClass]="{}">
+		<span class="input-group-text"><span class="font-weight-bold">Subscriber</span></span>
+	</div>
+	<input type="text" class="form-control font-weight-bold" [ngModel]="counterService.count$ | async">
+
+	<div class="input-group-append">
+		<button (click)="incrementCount()" class="input-group-text"><i class="fa fa-plus fa-lg" [ngClass]="{'highlighted':upstream}"></i></button>
+		<button (click)="decrementCount()" class="input-group-text"><i class="fa fa-minus fa-lg" [ngClass]="{'highlighted':!upstream && isSendMessageDownButtonClicked}"></i></button>
+	</div>
+</div>
