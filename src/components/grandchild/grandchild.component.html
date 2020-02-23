@@ -13,12 +13,16 @@
 				<input type="text" class="form-control" [(ngModel)]="messageFromParent">
       </div>
 				<app-count [parentComponentName]="componentName"></app-count>
-				<div>
+				<div style="position:relative;">
 					<app-great-grandchild [isSendMessageDownButtonClicked]="isSendMessageDownButtonClicked"
 						[messageFromParent]="messageFromParent" (passDataToGrandchild)="handleData($event)">
 					</app-great-grandchild>
-					<svg height="10" width="800">
-						<line x1="0" y1="0" x2="800" y2="0" style="stroke:rgb(255,0,0);stroke-width:5;" />
+					<!-- <svg style="position:absolute;top:50%;left:100%;" height="10" width="800">
+						<line x1="0" y1="0" x2="800" y2="0" style="stroke:rgb(255,0,0);stroke-width:10;" />
+						Sorry, your browser does not support inline SVG.
+					</svg> -->
+          <svg style="position:absolute;top:50%;left:100%;" height="10" width="800">
+						<path d ="m0, 0 250,0" style="stroke:rgb(255,0,0);stroke-width:10;" />
 						Sorry, your browser does not support inline SVG.
 					</svg>
 				</div>
