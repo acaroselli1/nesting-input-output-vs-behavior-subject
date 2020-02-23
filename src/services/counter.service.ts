@@ -10,6 +10,7 @@ export class CounterService {
   // public drawingContext$:Subject<CanvasRenderingContext2D> = new Subject<CanvasRenderingContext2D>();
 
   // Can not be accessed directly outside of class
+  private isTimerExpired$ = new BehaviorSubject<boolean>(false);
   private count$ = new BehaviorSubject<number>(this.initialValue);
   private serviceLayerMessage$ = new BehaviorSubject<string>(
     this.initialMessage
@@ -26,6 +27,8 @@ export class CounterService {
   }
 
   public incrementCount(componentName): void {
+    this.isTimerExpired$.next(false);
+    setTimeout( ()=>{this.isTimerExpired$.next(true)} ,1000);
     console.log("componentName: ", componentName);
     let currentValue = this.count$.getValue();
     currentValue++;
@@ -33,9 +36,12 @@ export class CounterService {
     let incrementMessage = `Service incrementCount() method called from ${componentName} component. BehaviorSubject incremented.`;
     this.serviceLayerMessage$.next(incrementMessage);
     this.isIncrementOrDecrementClicked$.next(true);
+    
   }
 
   public decrementCount(componentName): void {
+    this.isTimerExpired$.next(false);
+    setTimeout( ()=>{this.isTimerExpired$.next(true)} ,1000);
     console.log("componentName: ", componentName);
     let currentValue = this.count$.getValue();
     currentValue--;

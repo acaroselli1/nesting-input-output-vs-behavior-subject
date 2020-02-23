@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input, SimpleChanges, OnChanges } from '@angular/core';
+import { CounterService } from "../../services/counter.service.ts";
 
 @Component({
   selector: 'app-grandchild',
@@ -15,7 +16,7 @@ export class GrandChildComponent implements OnInit, OnChanges {
 
   @Output() passDataToChild = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(public counterService: CounterService) { }
 
   ngOnInit() {
   }
