@@ -15,14 +15,14 @@
 
 
 <svg [ngStyle]="{'display': ((counterService.isIncrementOrDecrementClicked$ | async) && !(counterService.isTimerExpired$ | async)) ? 'block' : 'none'}"
-	style="position:absolute;bottom:-18px;left:-240px;height:260px;width:275px;transform: rotate(90deg);">
+	style="position:absolute;bottom:-75px;left:-277px;height:285px;width:285px;transform: rotate(90deg);">
       <defs>
       <marker id="red-arrowhead" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto-start-reverse">
         <path d="M 0 0 L 10 5 L 0 10 z" stroke="none" fill="red"/>
       </marker>
     </defs>
 
-	<path d="m30, 235 l200,0 v-200"
+	<path d="m40, 262 l150,0 v-245"
 		style="stroke:rgb(255,0,0);stroke-width:10;fill:transparent;" marker-end="url(#red-arrowhead)"/>
 	Sorry, your browser does not support inline SVG.
 </svg>
