@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CounterService } from "../../services/counter.service.ts";
 
 @Component({
@@ -6,9 +6,12 @@ import { CounterService } from "../../services/counter.service.ts";
   templateUrl: './up-arrow.component.html',
   styleUrls: ['./up-arrow.component.css']
 })
-export class UpArrowComponent implements OnInit {
 
+export class UpArrowComponent implements OnInit {
+  @Input() data;
   constructor(public counterService: CounterService) { }
+
+  
 
   ngOnInit() {
   }

@@ -1,12 +1,30 @@
 <svg [ngStyle]="{'display': ((counterService.isIncrementOrDecrementClicked$ | async) && !(counterService.isTimerExpired$ | async)) ? 'block' : 'none'}"
-	style="position:absolute;bottom:25%;left:100%;height:260px;width:150px;">
+	style="position:absolute;bottom:25%;left:100%;height:260px;width:275px;">
       <defs>
       <marker id="red-arrowhead" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto">
         <path d="M 0 0 L 10 5 L 0 10 z" stroke="none" fill="red"/>
       </marker>
     </defs>
 
-	<path d="m0, 250 l125,0 v-150"
+	<path [attr.d]="data"
+
 		style="stroke:rgb(255,0,0);stroke-width:10;fill:transparent;" marker-end="url(#red-arrowhead)"/>
 	Sorry, your browser does not support inline SVG.
 </svg>
+
+
+
+<svg [ngStyle]="{'display': ((counterService.isIncrementOrDecrementClicked$ | async) && !(counterService.isTimerExpired$ | async)) ? 'block' : 'none'}"
+	style="position:absolute;bottom:-18px;left:-240px;height:260px;width:275px;transform: rotate(90deg);">
+      <defs>
+      <marker id="red-arrowhead" viewBox="0 0 10 10" refX="7" refY="5" markerUnits="strokeWidth" markerWidth="4" markerHeight="3" orient="auto-start-reverse">
+        <path d="M 0 0 L 10 5 L 0 10 z" stroke="none" fill="red"/>
+      </marker>
+    </defs>
+
+	<path d="m30, 235 l200,0 v-200"
+		style="stroke:rgb(255,0,0);stroke-width:10;fill:transparent;" marker-end="url(#red-arrowhead)"/>
+	Sorry, your browser does not support inline SVG.
+</svg>
+
+

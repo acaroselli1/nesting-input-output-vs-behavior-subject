@@ -18,6 +18,6 @@
 			</div>
       <div style="position:relative">
 			<app-count [parentComponentName]="formatName(componentName)"></app-count>
-      <app-up-arrow *ngIf="formatName(componentName) === (counterService.activeComponent$ | async)"></app-up-arrow>
+      <app-up-arrow *ngIf="formatName(componentName) === (counterService.activeComponent$ | async)" [data]="'m0, 250 l255,0 v-150'"></app-up-arrow>
 		</div>
 	</div>
