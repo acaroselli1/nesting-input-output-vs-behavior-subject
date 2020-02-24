@@ -14,7 +14,7 @@
       </div>
 				<div style="position:relative;">
 					<app-count [parentComponentName]="componentName"></app-count>
-						<app-up-arrow *ngIf="componentName === (counterService.activeComponent$ | async)" [data]="'m0, 250 l155,0 v-150'"></app-up-arrow>
+						<app-up-arrow *ngIf="componentName === (counterService.activeComponent$ | async)" [dataUpArrow]="'m0, 250 l155,0 v-150'"></app-up-arrow>
 				</div>
 				<app-child [isSendMessageDownButtonClicked]="isSendMessageDownButtonClicked"
 					[messageFromParent]="messageFromParent" (passDataToParent)="handleData($event)">

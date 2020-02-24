@@ -2,13 +2,13 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CounterService } from "../../services/counter.service.ts";
 
 @Component({
-  selector: 'app-up-arrow',
-  templateUrl: './up-arrow.component.html',
-  styleUrls: ['./up-arrow.component.css']
+  selector: 'app-arrows',
+  templateUrl: './arrows.component.html',
+  styleUrls: ['./arrows.component.css']
 })
 
-export class UpArrowComponent implements OnInit {
-  @Input() data;
+export class ArrowsComponent implements OnInit {
+  @Input() dataUpArrow;
   constructor(public counterService: CounterService) { }
 
   
