@@ -9,6 +9,7 @@ import { CounterService } from "../../services/counter.service.ts";
 
 export class ArrowsComponent implements OnInit {
   @Input() dataUpArrow;
+  @Input() dataDownArrow;
   constructor(public counterService: CounterService) { }
 
   

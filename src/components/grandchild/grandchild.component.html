@@ -18,13 +18,16 @@
 						<path d ="m0, 1068 l250,0 v-1068 l20 20 l-20 -20 l-20 20" style="stroke:rgb(255,0,0);stroke-width:10;fill:transparent;" />
 						Sorry, your browser does not support inline SVG.
 					</svg> -->
-					<app-up-arrow *ngIf="componentName === (counterService.activeComponent$ | async)" [dataUpArrow]="'m0, 250 l235,0 v-150'"></app-up-arrow>
+					<app-arrows *ngIf="componentName === (counterService.activeComponent$ | async)"
+						[dataUpArrow]="'m0, 250 l235,0 v-150'" [dataDownArrow]="'m40, 242 l150,0 v-225'"></app-arrows>
 				</div>
 				<app-great-grandchild [isSendMessageDownButtonClicked]="isSendMessageDownButtonClicked"
-					[messageFromParent]="messageFromParent" (passDataToGrandchild)="handleData($event)" [instanceNumber]=1>
+					[messageFromParent]="messageFromParent" (passDataToGrandchild)="handleData($event)"
+					[instanceNumber]=1>
 				</app-great-grandchild>
 				<app-great-grandchild [isSendMessageDownButtonClicked]="isSendMessageDownButtonClicked"
-					[messageFromParent]="messageFromParent" (passDataToGrandchild)="handleData($event)" [instanceNumber]=2 >
+					[messageFromParent]="messageFromParent" (passDataToGrandchild)="handleData($event)"
+					[instanceNumber]=2>
 				</app-great-grandchild>
 			</div>
 
