@@ -21,14 +21,18 @@ export class GreatGrandchildComponent
   @Input() messageFromParent;
   @Input() isSendMessageDownButtonClicked;
   @Output() passDataToGrandchild = new EventEmitter();
+  @Input() instanceNumber:string;
   message: string = "";
   upstream: boolean;
   isClicked: boolean = false;
   componentName: string = "GREAT-GRANDCHILD";
 
+
   constructor(public counterService: CounterService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.counterService.activeComponent$.subscribe(test=>console.log('test: ', test))
+  }
 
   handleClick(event) {
     setTimeout(() => {

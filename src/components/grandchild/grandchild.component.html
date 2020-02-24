@@ -13,17 +13,18 @@
 				<input type="text" class="form-control" [(ngModel)]="messageFromParent">
       </div>
 				<div style="position:relative;">
-				<app-count [parentComponentName]="componentName"></app-count>
-          <svg [ngStyle] ="{'opacity': ((counterService.isIncrementOrDecrementClicked$ | async) && !(counterService.isTimerExpired$ | async)) ? 1 : 0}" style="position:absolute;bottom:50%;left:100%;height:1068px;width:100%">
+					<app-count [parentComponentName]="componentName"></app-count>
+					<!-- <svg [ngStyle] ="{'opacity': ((counterService.isIncrementOrDecrementClicked$ | async) && !(counterService.isTimerExpired$ | async)) ? 1 : 0}" style="position:absolute;bottom:50%;left:100%;height:1068px;width:100%">
 						<path d ="m0, 1068 l250,0 v-1068 l20 20 l-20 -20 l-20 20" style="stroke:rgb(255,0,0);stroke-width:10;fill:transparent;" />
 						Sorry, your browser does not support inline SVG.
-					</svg>
+					</svg> -->
+					<app-up-arrow *ngIf="componentName === (counterService.activeComponent$ | async)"></app-up-arrow>
 				</div>
-					<app-great-grandchild [isSendMessageDownButtonClicked]="isSendMessageDownButtonClicked"
-						[messageFromParent]="messageFromParent" (passDataToGrandchild)="handleData($event)">
-					</app-great-grandchild>
 				<app-great-grandchild [isSendMessageDownButtonClicked]="isSendMessageDownButtonClicked"
-					[messageFromParent]="messageFromParent" (passDataToGrandchild)="handleData($event)">
+					[messageFromParent]="messageFromParent" (passDataToGrandchild)="handleData($event)" [instanceNumber]=1>
+				</app-great-grandchild>
+				<app-great-grandchild [isSendMessageDownButtonClicked]="isSendMessageDownButtonClicked"
+					[messageFromParent]="messageFromParent" (passDataToGrandchild)="handleData($event)" [instanceNumber]=2 >
 				</app-great-grandchild>
 			</div>
 

@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter,Input, SimpleChanges, OnChanges } from "@angular/core";
+import { CounterService } from "../../services/counter.service.ts";
+
 
 @Component({
   selector: "app-grandparent",
@@ -16,7 +18,7 @@ export class GrandparentComponent implements OnInit, OnChanges {
   downstream: boolean;
   downstreamMessage:string;
 
-  constructor() {}
+   constructor(public counterService:CounterService) { }
 
   ngOnInit() {}
 

@@ -9,6 +9,7 @@ import { GreatGrandchildComponent } from '../components/great-grandchild/great-g
 import { GreatGrandparentComponent } from '../components/great-grandparent/great-grandparent.component';
 import { ParentComponent } from '../components/parent/parent.component';
 import { CountComponent } from '../components/count/count.component';
+import { UpArrowComponent } from '../components/up-arrow/up-arrow.component';
 import { FormsModule } from '@angular/forms';
 import { CounterService } from '../services/counter.service';
 
@@ -22,7 +23,8 @@ import { CounterService } from '../services/counter.service';
     GreatGrandchildComponent,
     GreatGrandparentComponent,
     ParentComponent,
-    CountComponent
+    CountComponent,
+    UpArrowComponent
   ],
   imports: [
     BrowserModule,

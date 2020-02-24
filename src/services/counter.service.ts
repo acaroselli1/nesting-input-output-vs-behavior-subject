@@ -18,6 +18,7 @@ export class CounterService {
   private isIncrementOrDecrementClicked$ = new BehaviorSubject<boolean>(
     this.isIncrementOrDecrementClicked
   );
+  private activeComponent$ = new BehaviorSubject<string>('');
 
   constructor() {}
 
@@ -30,6 +31,7 @@ export class CounterService {
     this.isTimerExpired$.next(false);
     setTimeout( ()=>{this.isTimerExpired$.next(true)} ,1000);
     console.log("componentName: ", componentName);
+    this.activeComponent$.next(componentName);
     let currentValue = this.count$.getValue();
     currentValue++;
     this.count$.next(currentValue);
@@ -43,6 +45,7 @@ export class CounterService {
     this.isTimerExpired$.next(false);
     setTimeout( ()=>{this.isTimerExpired$.next(true)} ,1000);
     console.log("componentName: ", componentName);
+    this.activeComponent$.next(componentName);
     let currentValue = this.count$.getValue();
     currentValue--;
     this.count$.next(currentValue);

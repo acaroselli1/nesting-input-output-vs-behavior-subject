@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input, SimpleChanges, OnChanges } from '@angular/core';
+import { CounterService } from "../../services/counter.service.ts";
+
 
 @Component({
   selector: 'app-parent',
@@ -13,7 +15,7 @@ export class ParentComponent implements OnInit, OnChanges {
   @Input() messageFromParent;
   @Input() isSendMessageDownButtonClicked;
   componentName:string ='PARENT'
-  constructor() { }
+   constructor(public counterService:CounterService) { }
 
   ngOnInit() {
   }

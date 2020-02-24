@@ -12,7 +12,10 @@
 				</div>
 				<input type="text" class="form-control" [(ngModel)]="messageFromParent">
       </div>
-      <app-count [parentComponentName]="componentName"></app-count>
+				<div style="position:relative;">
+					<app-count [parentComponentName]="componentName"></app-count>
+						<app-up-arrow *ngIf="componentName === (counterService.activeComponent$ | async)"></app-up-arrow>
+				</div>
 				<app-child [isSendMessageDownButtonClicked]="isSendMessageDownButtonClicked"
 					[messageFromParent]="messageFromParent" (passDataToParent)="handleData($event)">
 				</app-child>

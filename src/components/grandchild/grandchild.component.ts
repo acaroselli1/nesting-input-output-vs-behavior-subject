@@ -13,6 +13,7 @@ export class GrandChildComponent implements OnInit, OnChanges {
   componentName:string = 'GRANDCHILD';
   @Input() messageFromParent;
   @Input() isSendMessageDownButtonClicked;
+ 
 
   @Output() passDataToChild = new EventEmitter<string>();
 

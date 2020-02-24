@@ -17,7 +17,10 @@
 					<button type="button" class="btn btn-info" (click)="handleClick($event)">Send Data Down            
           </button> </div>
 			</div>
+      <div style="position:relative;">
       <app-count [parentComponentName]="componentName"></app-count>
+      	<app-up-arrow *ngIf="componentName === (counterService.activeComponent$ | async)"></app-up-arrow>
+      </div>
 			<app-grandparent [isSendMessageDownButtonClicked]="isSendMessageDownButtonClicked"
 				[messageFromParent]="downstreamMessage" (passDataToGreatGrandParent)="handleData($event)">
 			</app-grandparent>
