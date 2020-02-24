@@ -1,6 +1,7 @@
 .container{
     background-color:#51A39D;
     padding:20px;
+    min-width:638px;
   }
   
   .gotMessage{

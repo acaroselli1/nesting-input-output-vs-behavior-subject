@@ -43,7 +43,7 @@ export class CounterService {
 
   public decrementCount(componentName): void {
     this.isTimerExpired$.next(false);
-    setTimeout( ()=>{this.isTimerExpired$.next(true)} ,1000);
+    // setTimeout( ()=>{this.isTimerExpired$.next(true)} ,1000);
     console.log("componentName: ", componentName);
     this.activeComponent$.next(componentName);
     let currentValue = this.count$.getValue();
