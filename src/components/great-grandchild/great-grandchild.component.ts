@@ -48,6 +48,10 @@ export class GreatGrandchildComponent
     }
   }
 
+  formatName(componentName){
+    return `${componentName} #${this.instanceNumber}`
+  }
+
   ngAfterViewInit() {
   //   let greatGrandChild = document.getElementById("great-grandchild");
   //   let coordinates = greatGrandChild.getBoundingClientRect();

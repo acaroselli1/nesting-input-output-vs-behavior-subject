@@ -2,7 +2,7 @@
 	[ngClass]="{'gotMessage':upstream,'gotMessageDown':messageFromParent && !upstream}">
 	<div class="card-body">
 		<div class="card-title">
-			<h5 class="font-weight-bold">GREAT-GRANDCHILD</h5>
+			<h5 class="font-weight-bold">GREAT-GRANDCHILD{{' #' + instanceNumber}} </h5>
 			<div class="input-group mb-3">
 				<div class="input-group-prepend">
 					<span class="input-group-text bg-info"><span class="font-weight-bold">@Output&nbsp;</span><i class="fa fa-arrow-up fa-lg up" [ngClass]="{'highlighted':upstream}"></i></span>
@@ -17,7 +17,7 @@
           </button> </div>
 			</div>
       <div style="position:relative">
-			<app-count [parentComponentName]="componentName + instanceNumber"></app-count>
-      <app-up-arrow *ngIf="componentName + instanceNumber === (counterService.activeComponent$ | async)"></app-up-arrow>
+			<app-count [parentComponentName]="formatName(componentName)"></app-count>
+      <app-up-arrow *ngIf="formatName(componentName) === (counterService.activeComponent$ | async)"></app-up-arrow>
 		</div>
 	</div>
