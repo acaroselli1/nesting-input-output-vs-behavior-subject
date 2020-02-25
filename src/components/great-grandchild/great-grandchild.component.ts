@@ -17,7 +17,7 @@ const COMPONENT_NAME = "GreatGrandchildComponent";
   styleUrls: ["./great-grandchild.component.css"]
 })
 export class GreatGrandchildComponent
-  implements OnInit, OnChanges, AfterViewInit {
+  implements OnInit, OnChanges {
   @Input() messageFromParent;
   @Input() isSendMessageDownButtonClicked;
   @Output() passDataToGrandchild = new EventEmitter();
@@ -52,16 +52,4 @@ export class GreatGrandchildComponent
     return `${componentName} #${this.instanceNumber}`
   }
 
-  ngAfterViewInit() {
-  //   let greatGrandChild = document.getElementById("great-grandchild");
-  //   let coordinates = greatGrandChild.getBoundingClientRect();
-  //   console.log('getBoundingClient: ',greatGrandChild.getBoundingClientRect());
-  //   this.counterService.drawingContext$.subscribe(context => {
-  //     console.log("sub context: ", context);
-  //     context.moveTo(coordinates.right, coordinates.top + coordinates.height/2);
-  //     context.lineTo(coordinates.right + 500, coordinates.top + coordinates.height/2 );
-  //     context.lineTo(coordinates.right + 500, coordinates.top - 975);
-  //     context.stroke();
-  //   });
-  }
 }

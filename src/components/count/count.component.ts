@@ -19,12 +19,8 @@ export class CountComponent implements OnInit {
   ngOnInit() {
   }
 
-  incrementCount(componentName) {
-    this.counterService.incrementCount(this.parentComponentName);
-  }
-
-  decrementCount(componentName) {
-    this.counterService.decrementCount(this.parentComponentName);
+  incrementOrDecrementCount(type,componentName) {
+    this.counterService.incrementOrDecrementCount(type,componentName);
   }
 
 }

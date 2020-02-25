@@ -18,40 +18,45 @@ export class CounterService {
   private isIncrementOrDecrementClicked$ = new BehaviorSubject<boolean>(
     this.isIncrementOrDecrementClicked
   );
-  private activeComponent$ = new BehaviorSubject<string>('');
+  private activeComponent$ = new BehaviorSubject<string>("");
 
   constructor() {}
 
-  // Can be accessed publicly only by components, other services, etc. with CounterService injected
-  public getCount(): Observable<number> {
-    return this.count$;
-  }
-
-  public incrementCount(componentName): void {
-    this.isTimerExpired$.next(false);
-    setTimeout( ()=>{this.isTimerExpired$.next(true)} ,1000);
-    console.log("componentName: ", componentName);
-    this.activeComponent$.next(componentName);
-    let currentValue = this.count$.getValue();
-    currentValue++;
-    this.count$.next(currentValue);
-    let incrementMessage = `Service incrementCount() method called from ${componentName} component. BehaviorSubject incremented.`;
-    this.serviceLayerMessage$.next(incrementMessage);
-    this.isIncrementOrDecrementClicked$.next(true);
-    
-  }
-
-  public decrementCount(componentName): void {
-    this.isTimerExpired$.next(false);
-    setTimeout( ()=>{this.isTimerExpired$.next(true)} ,1000);
-    console.log("componentName: ", componentName);
-    this.activeComponent$.next(componentName);
-    let currentValue = this.count$.getValue();
-    currentValue--;
-    this.count$.next(currentValue);
-    let decrementMessage = `Service decrementCount() method called from ${componentName} component. BehaviorSubject decremented.`;
-    this.serviceLayerMessage$.next(decrementMessage);
+  public incrementOrDecrementCount(type, componentName): void {
+    this.resetTimer();
+    this.startTimer();
+    this.setActiveComponent(componentName);
+    this.calculateCurrentValue(type);
+    this.setMessage(componentName);
     this.isIncrementOrDecrementClicked$.next(true);
   }
 
+  private setMessage(componentName) {
+    let message = `Service decrementCount() method called from ${componentName} component. BehaviorSubject decremented.`;
+    this.serviceLayerMessage$.next(message);
+  }
+
+  private startTimer() {
+    setTimeout(() => {
+      this.isTimerExpired$.next(true);
+    }, 1000);
+  }
+
+  private resetTimer() {
+    this.isTimerExpired$.next(false);
+  }
+
+  private setActiveComponent(componentName) {
+    this.activeComponent$.next(componentName);
+  }
+
+  private calculateCurrentValue(type){
+     let currentValue = this.count$.getValue();
+    if (type === "increment") {
+      currentValue++;
+    } else if ((type = "decrement")) {
+      currentValue--;
+    } 
+    this.count$.next(currentValue);
+  }
 }

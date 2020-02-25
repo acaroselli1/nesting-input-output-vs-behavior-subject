@@ -6,8 +6,8 @@
 	<input type="text" class="form-control font-weight-bold" [ngModel]="counterService.count$ | async">
 
 	<div class="input-group-append">
-		<button (click)="incrementCount()" class="input-group-text"><i class="fa fa-plus fa-lg" [ngClass]="{'highlighted':upstream}"></i></button>
-		<button (click)="decrementCount()" class="input-group-text"><i class="fa fa-minus fa-lg" [ngClass]="{'highlighted':!upstream && isSendMessageDownButtonClicked}"></i></button>
+		<button (click)="incrementOrDecrementCount('increment',parentComponentName)" class="input-group-text"><i class="fa fa-plus fa-lg" [ngClass]="{'highlighted':upstream}"></i></button>
+		<button (click)="incrementOrDecrementCount('decrement',parentComponentName)" class="input-group-text"><i class="fa fa-minus fa-lg" [ngClass]="{'highlighted':!upstream && isSendMessageDownButtonClicked}"></i></button>
 	</div>
 </div>
 

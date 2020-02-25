@@ -14,10 +14,6 @@
       </div>
 				<div style="position:relative;">
 					<app-count [parentComponentName]="componentName"></app-count>
-					<!-- <svg [ngStyle] ="{'opacity': ((counterService.isIncrementOrDecrementClicked$ | async) && !(counterService.isTimerExpired$ | async)) ? 1 : 0}" style="position:absolute;bottom:50%;left:100%;height:1068px;width:100%">
-						<path d ="m0, 1068 l250,0 v-1068 l20 20 l-20 -20 l-20 20" style="stroke:rgb(255,0,0);stroke-width:10;fill:transparent;" />
-						Sorry, your browser does not support inline SVG.
-					</svg> -->
 					<app-arrows *ngIf="componentName === (counterService.activeComponent$ | async)"
 						[dataUpArrow]="'m0, 250 l235,0 v-150'" [dataDownArrow]="'m40, 242 l150,0 v-225'"></app-arrows>
 				</div>
