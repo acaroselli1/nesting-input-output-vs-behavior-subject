@@ -27,12 +27,12 @@ export class CounterService {
     this.startTimer();
     this.setActiveComponent(componentName);
     this.calculateCurrentValue(type);
-    this.setMessage(componentName);
+    this.setMessage(type, componentName);
     this.isIncrementOrDecrementClicked$.next(true);
   }
 
-  private setMessage(componentName) {
-    let message = `Service decrementCount() method called from ${componentName} component. BehaviorSubject decremented.`;
+  private setMessage(type, componentName) {
+    let message = `Service ${type}Count() method called from ${componentName} component. BehaviorSubject decremented.`;
     this.serviceLayerMessage$.next(message);
   }
 
